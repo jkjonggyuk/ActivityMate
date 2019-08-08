@@ -1,0 +1,78 @@
+
+<br>
+
+<!-- 	<img src= "/app/assets/images/sec2img.jpg" alt="background img"> -->
+
+	<div class= "container">
+		<div class="well well-sm">
+			<p class="text-center"> 
+
+			<img src="http://gifimage.net/wp-content/uploads/2017/09/anime-hello-gif-9.gif" alt="Profile_img" class="img-circle">
+			</p>
+			<h1 class= "text-center"> Log in to your account </h1> 
+
+			
+			
+			<!-- <p class="lead"> Log in to your account </p> <br> -->
+
+		<!-- 	//hovering over circle picture
+<a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a> -->
+			
+
+<!-- <h1> Login Page </h1> -->
+
+
+<%= form_tag("/login", method: "get") do %>
+<div class="form-group">
+	<p class="text-center"> 
+<%= label_tag(:email, "Email") %>
+<%= text_field_tag(:email) %><br>
+	</p>
+</div>
+
+<div class="form-group">
+	<p class="text-center"> 
+<%= label_tag(:password, "Password") %>
+<%= password_field_tag(:password) %><br>
+	<p class="text-center"> 
+	</div>
+
+<p class="text-center"> 
+<%= button_tag "Login", {:class => "bttn-and-txt", :name => "submit", :value => "Login"} %> 
+</p>
+</p>
+
+<!--<%= button_tag "Sign Up", {:class => "bttn-and-txt", :name => "submit", :value => "Sign Up"} %> -->
+<% end %>
+
+
+</br> 
+	<p class="text-center"> 
+	Not signed up?
+	<a href='/signup', >Sign Up!<a/>
+	<br> 
+	<a href='/resetpass',> Forgot your password? </a>
+	</p>
+	</div>
+</div>
+	
+
+<!--
+
+<%= form_with scope: :user, url: users_path, local: true do |form| %>
+
+
+<p>
+	<%= form.label :Email %><br>
+	<%= form.text_field :email %>
+</p>
+<p>
+	<%= form.label :Password %><br>
+	<%= form.text_field :password %>
+</p>
+ <p>
+    <%= form.submit "Submit" %> 
+  </p>
+<% end %>
+
+-->

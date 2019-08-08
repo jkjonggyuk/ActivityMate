@@ -1,0 +1,33 @@
+
+<div class= "container">
+	<div class="well well-sm">
+		<p class="text-center"> <h1>Reset your Password</h1> </p>
+		<!-- <p>Find me in app/views/reset_password/new.html.erb</p> -->
+
+
+		<!--FORGOT PASS PAGE...
+			page for user to put in email and if valid email, will send email to link them to password reset page -->
+
+
+
+		<!-- This should go in sessions if we had one? /sessions/new -->
+
+
+		<%= form_tag("/resetpass", method: "get") do %>
+			
+			<div class='field'>
+			    <%= label_tag :email %>
+			    <%= text_field_tag :email, params[:email] %>
+			</div>
+	</div>
+			
+
+			<div class='actions'>
+				<%= submit_tag "Reset Password" %>
+			</div>
+<% end %>
+
+
+
+
+<!-- testing -->

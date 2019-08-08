@@ -1,0 +1,76 @@
+<h1>Find an Activity!</h1>
+<form accept-charset="UTF-8" action ="/results/index" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+
+
+<%= form_for :search, url: searches_path do |f| %>
+    <div class="field">
+        <p><%= f.label :Time %><br>
+
+        <select required name = "time_id" id ="time_id">
+            <option value="" disabled selected>--Select a duration of time--</option>
+            <option value="Less than an hour">Less than an hour</option>
+            <option value="1 to 2 hours">1 to 2 hours</option>
+            <option value="3 or more">3 or more</option>
+        </select>
+        </p>
+    </div>
+
+    <div class="field">
+        <p><%= f.label :Price %><br>
+        <select required name = "price_id" id ="price_id">
+            <option value="" disabled selected>--Select a price--</option>
+            <option value="Any">Any price</option>
+            <option value="0">Free</option>
+            <option value="1">Inexpensive</option>
+            <option value="2">Moderate</option>
+            <option value="3">Expensive</option>
+        </select>
+        </p>
+    </div>
+
+    <div class="field">
+        <p><%= f.label :Theme %><br>
+        <select required name = "theme_id" id ="theme_id">
+            <option value="" disabled selected>--Select a theme--</option>
+            <option value="park or beach">Nature</option>
+            <option value="museum or art gallery">Museums</option>
+            <option value="attractions">Attractions</option>
+            <option value="bakery or bar or cafe or restaurant">Food and Drink</option>
+            <option value="shopping">Shopping</option>
+            <option value="nightclub or bar">Nightlife</option>
+            <option value="point of interest">Tourist Attractions</option>
+        </select>
+        </p>
+    </div>
+    <div class="field2">
+
+      <script>
+      $(document).ready(function() {
+        $('select#usingSelect2').select2({
+            width: '35%' //overriding default
+        });
+      });
+        </script>
+
+        <p><%= f.label :Location %><br>
+        <% options = options_from_collection_for_select(Location.all, 'city', 'city', 'state') %>
+        <%= f.select :city_id, options, {:prompt => "--Select a location--"}, :required => true, id: "usingSelect2" %>
+        </p>
+    </div>
+
+    <div class="field">
+        <p><%= f.submit 'Search', class: "btn btn-info" %>
+        </p>
+    </div>
+
+    <% content_for :js do %>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        prettyPrint();
+    });
+    </script>
+<% end %>
+
+<% end %>

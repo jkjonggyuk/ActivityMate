@@ -1,0 +1,37 @@
+<h1><%= "Recently Saved Bookmarks: " %></h1><br>
+
+<!-- print top 5 most recently updated bookmarks-->
+<div>
+	<h4><%= @one %></h4> 
+		<h5><%= @address1 %></h5>
+		<h5><%= @phone1 %></h5><br>
+		<%= link_to 'Destroy', action: "delete1" %><br>
+</div>
+
+<div>
+	<br><h4><%= @two %></h4> 
+		<h5><%= @address2 %></h5>
+		<h5><%= @phone2 %></h5><br>
+		<%= link_to 'Destroy', action: "delete2" %><br>
+</div>
+
+<div>
+	<br><h4><%= @three %></h4> 
+		<h5><%= @address3 %></h5>
+		<h5><%= @phone3 %></h5><br>
+		<%= link_to 'Destroy', action: "delete3" %><br>
+</div>
+
+<div>
+	<br><h4><%= @four %></h4> 
+		<h5><%= @address4 %></h5>
+		<h5><%= @phone4 %></h5><br>
+		<%= link_to 'Destroy', action: "delete4" %><br>
+</div>
+
+<div>
+	<br><h4><%= @five %></h4> 
+		<h5><%= @address5 %></h5>
+		<h5><%= @phone5 %></h5><br>
+		<%= link_to 'Destroy', action: "delete5" %><br><br><br>
+</div>

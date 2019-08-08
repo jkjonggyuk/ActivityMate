@@ -1,0 +1,48 @@
+<form accept-charset="UTF-8" action ="/searches/new" method="get">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+
+<h1><%= @title %></h1>
+<h2><%= @subheading %></h2><br>
+
+<div>
+	<h4><%= "Current Weather in " + @city %></h4>
+<!--
+	<p><%= image_tag(@weathericon, :align => 'centre')%></p><br>
+-->
+	<h4><%= image_tag(@weathericon, :align=>'center', :size=>'150x150' )%><%= @weatherstmt %></p><br></h4>
+</div>
+
+<div>
+	<div class="results_container">
+		<h4><%= @first %></h4><br> 
+		<%= link_to '<button type="button">Bookmark</button>'.html_safe, {:controller => "results", :action => "bookmark1", :method => :post}, :class => "button white" %><br>
+		<img><%= image_tag(@map1)%></img>
+			<h5><%= @address1 %></h5>
+			<h5><%= @phone1 %></h5>
+			<h5><%= @rating1 %></h5>
+			<h5><%= link_to "Website", @url1, :target => "_blank" %></h5><br>
+	</div>
+
+	<div class="results_container">
+		<h4><%= @second %></h4><br>
+		<%= link_to '<button type="button">Bookmark</button>'.html_safe, {:controller => "results", :action => "bookmark2", :name => "bookmark2", :method => :post}, :class => "button white" %><br>
+		<img><%= image_tag(@map2)%></img>
+			<h5><%= @address2 %></h5>
+			<h5><%= @phone2 %></h5>
+			<h5><%= @rating2 %></h5>
+			<h5><%= link_to "Website", @url2, :target => "_blank" %></h5><br>
+	</div>
+
+	<div class="results_container">
+		<h4><%= @third %></h4><br>
+		<%= link_to '<button type="button">Bookmark</button>'.html_safe, {:controller => "results", :action => "bookmark3", :name => "bookmark3", :method => :post}, :class => "button white" %><br>
+		<img><%= image_tag(@map3)%></img>
+			<h5><%= @address3 %></h5>
+			<h5><%= @phone3 %></h5>
+			<h5><%= @rating3 %></h5>
+			<h5><%= link_to "Website", @url3, :target => "_blank" %></h5><br>
+	</div>
+</div>
+
+<input type="submit" name="moveback" value="Search Again" /><br>
